@@ -1,35 +1,37 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
-const coursesSchema = new Schema({
+const testimonialSchema = new Schema(
+  {
+    image: {
+      type: String,
+      required: [true, "Student image is required"],
+    },
     name: {
-        type: String,
-        required: [true, "name is required"],
-        trim: true,
+      type: String,
+      required: [true, "Student name is required"],
+      trim: true,
     },
-    totalStudent: {
-        type: String,
-        default:true,
+    message: {
+      type: String,
+      required: [true, "Testimonial message is required"],
+      trim: true,
     },
-    price:{
-        type:String,
-        required:[true,"price is required"],
+    rating: {
+      type: Number,
+      required: [true, "Rating is required"],
+      min: 1,
+      max: 5,
+      default: 5,
     },
-    duration:{
-        type:Date,
-        default:true,
+    isActive: {
+      type: Boolean,
+      default: true,
     },
-    image:{
-        type:String,
-        required: [true, "banner is required"],
-    },
-
-
-},
-    {
-        versionKey: false,
-        timestamps: true,
-    },
+  },
+  {
+    timestamps: true,
+  }
 );
 
-module.exports = mongoose.model("Courses", coursesSchema);
+module.exports = mongoose.model("Testimonial", testimonialSchema);

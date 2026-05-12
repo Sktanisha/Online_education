@@ -13,7 +13,7 @@ const categorySchema = new Schema({
     },
     image:{
         type:String,
-        required: [true, "banner is required"],
+        required: [true, "category is required"],
     },
 
 
