@@ -6,6 +6,7 @@ const router = express.Router();
 router.use("/auth", require("./auth"));
 router.use("/banner", require("./banner"));
 router.use("/courses", require("./courses"));
-//router.use("/subcategory", require("./subcategory"));
+router.use("/categories", require("./categories"));
+router.use("/testimonials", require("./testimonials"));
 
 module.exports = router;
