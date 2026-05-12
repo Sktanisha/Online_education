@@ -4,8 +4,8 @@ const router = express.Router();
 
 //http://localhost:8080/api/v1/auth
 router.use("/auth", require("./auth"));
-//router.use("/banner", require("./banner"));
-//router.use("/category", require("./category"));
+router.use("/banner", require("./banner"));
+router.use("/courses", require("./courses"));
 //router.use("/subcategory", require("./subcategory"));
 
 module.exports = router;
